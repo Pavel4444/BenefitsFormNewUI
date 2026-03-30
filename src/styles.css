@@ -1,0 +1,35 @@
+:root {
+    color: #1f2328;
+    background:
+        radial-gradient(circle at top left, rgba(228, 62, 43, 0.08), transparent 32%),
+        linear-gradient(180deg, #fffaf7 0%, #f3f4f6 100%);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.hero-card {
+    color: white;
+    background:
+        linear-gradient(135deg, rgba(167, 29, 42, 0.96), rgba(232, 90, 60, 0.92)),
+        linear-gradient(180deg, #c53030, #9b2c2c);
+    box-shadow: 0 24px 60px rgba(167, 29, 42, 0.22);
+}
+
+.page-column-main {
+    min-width: 0;
+}
+
+.proof-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fcfcfd 100%);
+}
