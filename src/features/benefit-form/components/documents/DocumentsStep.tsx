@@ -61,7 +61,7 @@ export const DocumentsStep: React.FunctionComponent<DocumentsStepProps> = (props
                 props.onNext();
             }}
         >
-            <Paper radius="xs" withBorder p="xl">
+            <Paper radius="xs" withBorder  p={{ base: "xs", sm: "xl" }}>
                 <Stack gap="lg" pb="lg">
                     <SectionHeading
                         number={1}
