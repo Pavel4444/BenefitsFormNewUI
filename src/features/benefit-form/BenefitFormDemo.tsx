@@ -1,4 +1,5 @@
 import { Container, Paper, Stack, Stepper, Text, Title } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconCreditCard, IconUpload } from "@tabler/icons-react";
 import { useState } from "react";
 
@@ -36,6 +37,7 @@ export const BenefitFormDemo = () => {
         applicationId: string;
         caseId: string;
     } | null>(null);
+    const isMobileStepper = useMediaQuery("(max-width: 48em)");
 
     const form = useBenefitForm({
         initialValues: createInitialValues(),
@@ -116,7 +118,7 @@ export const BenefitFormDemo = () => {
                             }}
                             allowNextStepsSelect={false}
                             color="blue"
-                            size="md"
+                            size={isMobileStepper ? "xs" : "md"}
                             styles={{
                                 stepIcon: {
                                     display: "flex",

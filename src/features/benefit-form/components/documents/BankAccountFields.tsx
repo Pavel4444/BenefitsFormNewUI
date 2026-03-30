@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Group, Stack, Text, TextInput } from "@mantine/core";
+import { Grid, Stack, Text, TextInput } from "@mantine/core";
 
 import { useBenefitFormContext } from "../../context";
 import { documentsStepTexts } from "./texts";
@@ -9,73 +9,81 @@ export const BankAccountFields: React.FunctionComponent = () => {
 
     return (
         <>
-            <Stack gap="md" hiddenFrom="sm">
-                <Group align="flex-start" gap="xs" wrap="nowrap">
-                    <Box style={{ flex: "0 0 96px" }}>
+            <Stack gap="md" hiddenFrom="sm" w="100%">
+                <Grid gutter="xs" align="end">
+                    <Grid.Col span={3}>
                         <TextInput
                             c="dimmed"
                             label={documentsStepTexts.bankAccountSection.prefixLabel}
                             placeholder={documentsStepTexts.bankAccountSection.prefixPlaceholder}
                             {...form.getInputProps("refundBankAccount.prefix")}
                         />
-                    </Box>
+                    </Grid.Col>
 
-                    <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mt={28}>
-                        -
-                    </Text>
+                    <Grid.Col span="content">
+                        <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mb={10}>
+                            -
+                        </Text>
+                    </Grid.Col>
 
-                    <Box style={{ flex: "1 1 auto" }}>
+                    <Grid.Col span="auto">
                         <TextInput
                             c="dimmed"
                             label={documentsStepTexts.bankAccountSection.accountNumberLabel}
                             {...form.getInputProps("refundBankAccount.accountNumber")}
                         />
-                    </Box>
-                </Group>
+                    </Grid.Col>
+                </Grid>
 
-                <Box maw={220}>
-                    <TextInput
-                        c="dimmed"
-                        label={documentsStepTexts.bankAccountSection.bankCodeLabel}
-                        {...form.getInputProps("refundBankAccount.bankCode")}
-                    />
-                </Box>
+                <Grid>
+                    <Grid.Col span={{ base: 12, xs: 6 }}>
+                        <TextInput
+                            c="dimmed"
+                            label={documentsStepTexts.bankAccountSection.bankCodeLabel}
+                            {...form.getInputProps("refundBankAccount.bankCode")}
+                        />
+                    </Grid.Col>
+                </Grid>
             </Stack>
 
-            <Group align="flex-start" gap="xs" wrap="nowrap" visibleFrom="sm">
-                <Box style={{ flex: "0 0 96px" }}>
+            <Grid gutter="xs" align="end" visibleFrom="sm">
+                <Grid.Col span={2}>
                     <TextInput
                         c="dimmed"
                         label={documentsStepTexts.bankAccountSection.prefixLabel}
                         placeholder={documentsStepTexts.bankAccountSection.prefixPlaceholder}
                         {...form.getInputProps("refundBankAccount.prefix")}
                     />
-                </Box>
+                </Grid.Col>
 
-                <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mt={28}>
-                    -
-                </Text>
+                <Grid.Col span="content">
+                    <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mb={10}>
+                        -
+                    </Text>
+                </Grid.Col>
 
-                <Box style={{ flex: "0 0 164px" }}>
+                <Grid.Col span={5}>
                     <TextInput
                         c="dimmed"
                         label={documentsStepTexts.bankAccountSection.accountNumberLabel}
                         {...form.getInputProps("refundBankAccount.accountNumber")}
                     />
-                </Box>
+                </Grid.Col>
 
-                <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mt={28}>
-                    /
-                </Text>
+                <Grid.Col span="content">
+                    <Text aria-hidden="true" role="presentation" c="dimmed" fw={700} mb={10}>
+                        /
+                    </Text>
+                </Grid.Col>
 
-                <Box style={{ flex: "0 0 164px" }}>
+                <Grid.Col span={4}>
                     <TextInput
                         c="dimmed"
                         label={documentsStepTexts.bankAccountSection.bankCodeLabel}
                         {...form.getInputProps("refundBankAccount.bankCode")}
                     />
-                </Box>
-            </Group>
+                </Grid.Col>
+            </Grid>
         </>
     );
 };
